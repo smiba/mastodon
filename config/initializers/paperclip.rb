@@ -46,7 +46,7 @@ if ENV['S3_ENABLED'] == 'true'
     s3_host_name: s3_hostname,
 
     s3_headers: {
-      'X-Amz-Multipart-Threshold' => ENV.fetch('S3_MULTIPART_THRESHOLD') { 15.megabytes }.to_i,
+      'X-Amz-Multipart-Threshold' => ENV.fetch('S3_MULTIPART_THRESHOLD') { 250.megabytes }.to_i,
       'Cache-Control' => 'public, max-age=315576000, immutable',
     },
 
@@ -64,7 +64,7 @@ if ENV['S3_ENABLED'] == 'true'
       http_open_timeout: ENV.fetch('S3_OPEN_TIMEOUT'){ '5' }.to_i,
       http_read_timeout: ENV.fetch('S3_READ_TIMEOUT'){ '5' }.to_i,
       http_idle_timeout: 5,
-      retry_limit: 0,
+      retry_limit: 2,
     }
   )
   

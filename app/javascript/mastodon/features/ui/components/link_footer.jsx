@@ -70,7 +70,9 @@ class LinkFooter extends PureComponent {
             </>
           )}
           {DividingCircle}
-          <Link to='/privacy-policy' target={multiColumn ? '_blank' : undefined}><FormattedMessage id='footer.privacy_policy' defaultMessage='Privacy policy' /></Link>
+          <Link to='/privacy-policy'><FormattedMessage id='footer.privacy_policy' defaultMessage='Privacy policy' /></Link>
+          {DividingCircle}
+          <a href='https://elk.woof.tech'><FormattedMessage id='footer.elk' defaultMessage='Elk (Alpha)' /></a>
         </p>
 
         <p>

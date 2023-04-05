@@ -4,6 +4,21 @@ class AccountsIndex < Chewy::Index
   include DatetimeClampingConcern
 
   settings index: { refresh_interval: '30s' }, analysis: {
+    filter: {
+      english_stop: {
+        type: 'stop',
+        stopwords: '_english_',
+      },
+      english_stemmer: {
+        type: 'stemmer',
+        language: 'english',
+      },
+      english_possessive_stemmer: {
+        type: 'stemmer',
+        language: 'possessive_english',
+      },
+    },
+
     analyzer: {
       content: {
         tokenizer: 'whitespace',
@@ -14,6 +29,18 @@ class AccountsIndex < Chewy::Index
         tokenizer: 'edge_ngram',
         filter: %w(lowercase asciifolding cjk_width),
       },
+
+      text: {
+        tokenizer: 'uax_url_email',
+        filter: %w(
+          english_possessive_stemmer
+          lowercase
+          asciifolding
+          cjk_width
+          english_stop
+          english_stemmer
+        ),
+      },
     },
 
     tokenizer: {
@@ -21,6 +48,17 @@ class AccountsIndex < Chewy::Index
         type: 'edge_ngram',
         min_gram: 1,
         max_gram: 15,
+      },
+    },
+
+    normalizer: {
+      tag: {
+        type: 'custom',
+        filter: %w(
+          lowercase
+          asciifolding
+          cjk_width
+        ),
       },
     },
   }
@@ -40,6 +78,17 @@ class AccountsIndex < Chewy::Index
 
     field :following_count, type: 'long', value: ->(account) { account.following_count }
     field :followers_count, type: 'long', value: ->(account) { account.followers_count }
+    field :created_at, type: 'date'
     field :last_status_at, type: 'date', value: ->(account) { clamp_date(account.last_status_at || account.created_at) }
+    field :discoverable, type: 'boolean'
+    field :silenced, type: 'boolean', value: ->(account) { account.silenced? }
+    field :domain, type: 'keyword', value: ->(account) { account.domain }
+    field :is, type: 'keyword', value: ->(account) { account.searchable_is }
+    field :emojis, type: 'keyword', value: ->(account) { account.searchable_emojis }
+    field :tags, type: 'keyword', normalizer: 'tag', value: ->(account) { account.searchable_tags }
+
+    field :text, type: 'text', value: ->(account) { account.searchable_text } do
+      field :stemmed, type: 'text', analyzer: 'text'
+    end
   end
 end

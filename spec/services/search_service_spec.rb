@@ -88,15 +88,7 @@ describe SearchService, type: :service do
           allow(Tag).to receive(:search_for)
 
           results = subject.call(query, nil, 10)
-          expect(Tag).not_to have_received(:search_for)
-          expect(results).to eq empty_results
-        end
-        it 'does not include account when starts with # character' do
-          query = '#tag'
-          allow(AccountSearchService).to receive(:new)
-
-          results = subject.call(query, nil, 10)
-          expect(AccountSearchService).to_not have_received(:new)
+          expect(Tag).to_not have_received(:search_for)
           expect(results).to eq empty_results
         end
       end

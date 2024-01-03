@@ -17,7 +17,7 @@ module Mastodon
     end
 
     def flags
-      ''
+      '-1'
     end
 
     def suffix

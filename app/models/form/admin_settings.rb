@@ -35,6 +35,7 @@ class Form::AdminSettings
     status_page_url
     captcha_enabled
     reject_pattern
+    reject_blurhash
   ).freeze
 
   INTEGER_KEYS = %i(

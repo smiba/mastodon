@@ -57,4 +57,3 @@ module CaptchaConcern
     hcaptcha_tags
   end
 end
-git

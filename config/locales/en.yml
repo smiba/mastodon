@@ -747,6 +747,10 @@ en:
         all: To everyone
         disabled: To no one
         users: To logged-in local users
+      others:
+        activitypub: ActivityPub
+        preamble: Other settings, including customizing behavior
+        title: Other settings
       registrations:
         preamble: Control who can create an account on your server.
         title: Registrations
@@ -755,6 +759,9 @@ en:
           approved: Approval required for sign up
           none: Nobody can sign up
           open: Anyone can sign up
+      reject_pattern:
+        desc_html: Set a regular expression pattern to inspect Create Activity content, and refuse Activity if you match
+        title: Reject Pattern
       title: Server Settings
     site_uploads:
       delete: Delete uploaded file
@@ -967,6 +974,7 @@ en:
   applications:
     created: Application successfully created
     destroyed: Application successfully deleted
+    invalid_regexp: "The provided Regexp is invalid: %{message}"
     regenerate_token: Regenerate access token
     token_regenerated: Access token successfully regenerated
     warning: Be very careful with this data. Never share it with anyone!

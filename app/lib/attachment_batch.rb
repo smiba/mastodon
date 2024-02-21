@@ -48,7 +48,7 @@ class AttachmentBatch
   def remove_files
     keys = []
 
-    logger.info { "Preparing to delete attachments for #{records.size} records" }
+    logger.debug { "Preparing to delete attachments for #{records.size} records" }
 
     records.each do |record|
       @attachment_names.each do |attachment_name|
@@ -80,7 +80,7 @@ class AttachmentBatch
     # separate them into multiple calls.
 
     keys.each_slice(LIMIT) do |keys_slice|
-      logger.info { "Deleting #{keys_slice.size} objects" }
+      logger.debug { "Deleting #{keys_slice.size} objects" }
 
       bucket.delete_objects(delete: {
         objects: keys_slice.map { |key| { key: key } },

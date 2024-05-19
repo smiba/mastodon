@@ -101,7 +101,7 @@ class ComposeForm extends ImmutablePureComponent {
     const isOnlyWhitespace = fulltext.length !== 0 && fulltext.trim().length === 0;
 
     return !(isSubmitting || isUploading || isChangingUpload || length(fulltext) > 1500 || (isOnlyWhitespace && !anyMedia));
-  }
+  };
 
   handleSubmit = (e) => {
     if (this.props.text !== this.autosuggestTextarea.textarea.value) {
@@ -296,8 +296,9 @@ class ComposeForm extends ImmutablePureComponent {
               <LanguageDropdown />
             </div>
 
-          <div className='character-counter__wrapper'>
-            <CharacterCounter max={1500} text={this.getFulltextForCharacterCounting()} />
+            <div className='character-counter__wrapper'>
+              <CharacterCounter max={1500} text={this.getFulltextForCharacterCounting()} />
+            </div>
           </div>
         </div>
 

@@ -7,7 +7,7 @@ nl:
         discoverable: Jouw openbare berichten kunnen worden uitgelicht op verschillende plekken binnen Mastodon en jouw account kan worden aanbevolen aan andere gebruikers.
         display_name: Jouw volledige naam of een leuke bijnaam.
         fields: Jouw website, persoonlijke voornaamwoorden, leeftijd, alles wat je maar kwijt wilt.
-        indexable: Jouw openbare berichten kunnen in de zoekresultaten op Mastodon verschijnen. Mensen die op jouw berichten hebben gereageerd kunnen ze sowieso doorzoeken.
+        indexable: Je expliciet aanmelden om jouw openbare berichten in de zoekresultaten van Mastodon te verwerken. Sommige Mastodon servers negeren deze setting. Mensen die op jouw berichten hebben gereageerd kunnen ze sowieso doorzoeken.
         note: 'Je kunt andere mensen @vermelden of #hashtags gebruiken.'
         show_collections: Mensen kunnen zien wie jij volgt en wie jou volgen.
         unlocked: Mensen kunnen jou volgen zonder daarvoor toestemming te hoeven vragen. Wanneer je nieuwe volgers handmatig wil goedkeuren moet je deze optie deselecteren.

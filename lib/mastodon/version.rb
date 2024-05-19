@@ -17,7 +17,7 @@ module Mastodon
     end
 
     def default_prerelease
-      ''
+      'woof'
     end
 
     def prerelease
@@ -44,7 +44,7 @@ module Mastodon
     end
 
     def repository
-      ENV.fetch('GITHUB_REPOSITORY', 'mastodon/mastodon')
+      ENV.fetch('GITHUB_REPOSITORY', 'smiba/mastodon')
     end
 
     def source_base_url

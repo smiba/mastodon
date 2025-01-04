@@ -17,7 +17,7 @@ html.has-modal {
 
 body {
   font-family: $font-sans-serif, sans-serif;
-  background: var(--background-color);
+  background: darken($ui-base-color, 8%);
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;

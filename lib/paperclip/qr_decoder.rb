@@ -22,7 +22,7 @@ module Paperclip
       rescue Terrapin::ExitStatusError
         return nil
       rescue Terrapin::CommandNotFoundError
-        log('Could not run the `qrtool` command. Please install qrtool.')
+        raise Paperclip::Errors::CommandNotFoundError, 'Could not run the `qrtool` command. Please install qrtool.'
         return nil
       end
 

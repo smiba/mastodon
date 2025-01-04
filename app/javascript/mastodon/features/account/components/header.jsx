@@ -90,9 +90,7 @@ const titleFromAccount = account => {
 const messageForFollowButton = relationship => {
   if(!relationship) return messages.follow;
 
-  if (relationship.get('following') && relationship.get('followed_by')) {
-    return messages.mutual;
-  } else if (relationship.get('following') || relationship.get('requested')) {
+  if (relationship.get('following') || relationship.get('requested')) {
     return messages.unfollow;
   } else if (relationship.get('followed_by')) {
     return messages.followBack;

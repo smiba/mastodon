@@ -53,6 +53,10 @@ export const LinkFooter: React.FC<{
             defaultMessage='Privacy policy'
           />
         </Link>
+        <DividingCircle />
+        <a href='https://elk.woof.tech'>
+          <FormattedMessage id='footer.elk' defaultMessage='Elk (Alpha)' />
+        </a>
         {termsOfServiceEnabled && (
           <>
             <DividingCircle />

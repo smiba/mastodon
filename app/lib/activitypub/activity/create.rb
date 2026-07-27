@@ -14,7 +14,7 @@ class ActivityPub::Activity::Create < ActivityPub::Activity
   private
 
   def create_status
-    return reject_payload! if unsupported_object_type? || non_matching_uri_hosts?(@account.uri, object_uri) || tombstone_exists? || reject_pattern?(@object['content'])?
+    return reject_payload! if unsupported_object_type? || non_matching_uri_hosts?(@account.uri, object_uri) || tombstone_exists? || reject_pattern?(@object['content'])
 
     @status_parser = ActivityPub::Parser::StatusParser.new(
       @json,

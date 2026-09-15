@@ -3,8 +3,8 @@
 @mixin tokens {
   /* TEXT TOKENS */
 
-  --color-text-primary: var(--color-grey-100);
-  --color-text-secondary: var(--color-grey-300);
+  --color-text-primary: var(--color-grey-50);
+  --color-text-secondary: var(--color-grey-200);
   --color-text-tertiary: var(--color-grey-400); // legacy
   --color-text-inverted: var(--color-grey-950);
   --color-text-brand: var(--color-indigo-300);
@@ -38,7 +38,7 @@
   // Neutrals
   --color-bg-primary: var(--color-grey-950);
   --overlay-strength-secondary: 4%;
-  --color-bg-secondary: var(--color-grey-900);
+  --color-bg-secondary: #292938;
   --color-bg-tertiary: var(--color-grey-800); // legacy
 
   // Utility
@@ -54,7 +54,7 @@
   --color-bg-brand-base: var(--color-indigo-700);
   --color-bg-brand-base-hover: var(--color-indigo-800); // legacy
   --color-bg-brand-soft: var(--color-indigo-900);
-  --color-bg-brand-softest: var(--color-grey-900);
+  --color-bg-brand-softest: #313144;
 
   // Error
   --color-bg-error-base: var(--color-red-700);

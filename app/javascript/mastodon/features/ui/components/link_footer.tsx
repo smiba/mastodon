@@ -61,6 +61,14 @@ export const LinkFooter: React.FC<{
               />
             </Link>
           </li>
+          <li>
+            <a href='https://elk.woof.tech'>
+              <FormattedMessage
+                id='footer.elk'
+                defaultMessage='Elk (Alpha)'
+              />
+            </a>
+          </li>
           {termsOfServiceEnabled && (
             <li>
               <Link

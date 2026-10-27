@@ -12,7 +12,7 @@ User-Agent: Meta-ExternalAgent
 User-Agent: Meta-ExternalFetcher
 User-Agent: diffbot
 User-Agent: PerplexityBot
-User-Agent: Perplexity‑User
+User-Agent: Perplexity-User
 User-Agent: Omgili
 User-Agent: Omgilibot
 User-Agent: webzio-extended
@@ -87,4 +87,4 @@ Disallow: /media_proxy/
 Disallow: /interact/
 Disallow: /api/v1/instance/domain_blocks
 Content-Usage: ai=n
-Content-Signal: search=yes, ai-input=no, ai-train=no
+Content-Signal: search=yes, ai-input=no, train-ai=no
